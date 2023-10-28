@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col">
+      <div *ngFor="let p of propertList">
+        <div style="height: 3rem"></div>
+        <div class="card" style="width: 30rem">
+          <img [src]="p.imageurl" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">{{ p.title }}</h5>
+            <p class="card-text">{{ p.description }}</p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Rent: {{ p.rent }}/Month</li>
+              <li class="list-group-item">Deposit: {{ p.deposite }}</li>
+              <li class="list-group-item">
+                Additional charges: {{ p.additionalcharges }}/Month
+              </li>
+            </ul>
+            <a routerLink="/home/details/{{ p.id }}" class="btn btn-danger"
+              >Get Details</a
+            >
+          </div>
+        </div>
+        <div style="height: 3rem"></div>
+      </div>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>

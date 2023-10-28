@@ -1,0 +1,55 @@
+<nav class="navbar navbar-light bg-danger">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">Welcome to Real Estate Portfolio</span>
+  </div>
+</nav>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md"></div>
+    <div class="col-md">
+      <div style="height: 3rem"></div>
+      <form #loginform="ngForm" (ngSubmit)="DoLogin(loginform)">
+        <div class="row mb-3">
+          <label for="username" class="col-sm-2 col-form-label"
+            >User Name</label
+          >
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              name="username"
+              ngModel
+              #usernamectl="ngModel"
+              required
+            />
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="password" class="col-sm-2 col-form-label">Password</label>
+          <div class="col-sm-10">
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+              ngModel
+              #passwordctl="ngModel"
+              required
+            />
+          </div>
+        </div>
+        <div class="d-grid gap-2">
+          <button
+            type="submit"
+            class="btn btn-danger"
+            [disabled]="loginform.invalid"
+          >
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="col-md"></div>
+  </div>
+</div>
