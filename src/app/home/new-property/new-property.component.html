@@ -1,1 +1,147 @@
-<p>new-property works!</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md"></div>
+    <div class="col-md">
+      <div class="card-md">
+        <div class="card-body">
+          <h5 class="card-title">Add New Property</h5>
+
+          <form
+            #newpropertyform="ngForm"
+            (submit)="add_new_property(newpropertyform)"
+          >
+            <div style="height: 3rem"></div>
+            <div class="row">
+              <label for="title" class="col-md-4 col-form-label">Title</label>
+              <div class="col-md-8">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="title"
+                  name="title"
+                  ngModel
+                />
+              </div>
+            </div>
+            <div style="height: 3rem"></div>
+            <div class="row">
+              <label for="subtitle" class="col-md-4 col-form-label"
+                >Sub Title</label
+              >
+              <div class="col-md-8">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="subtitle"
+                  name="subtitle"
+                  ngModel
+                />
+              </div>
+            </div>
+            <div style="height: 3rem"></div>
+            <div class="row">
+              <label for="propertydesc" class="col-md-4 col-form-label"
+                >Description</label
+              >
+              <div class="col-md-8">
+                <textarea
+                  type="text"
+                  class="form-control"
+                  id="propertydesc"
+                  name="propertydesc"
+                  ngModel
+                >
+                </textarea>
+              </div>
+            </div>
+            <div style="height: 3rem"></div>
+            <div class="row">
+              <label for="address" class="col-md-4 col-form-label"
+                >Address</label
+              >
+              <div class="col-md-8">
+                <textarea
+                  type="text"
+                  class="form-control"
+                  id="address"
+                  name="address"
+                  ngModel
+                >
+                </textarea>
+              </div>
+            </div>
+            <div style="height: 3rem"></div>
+            <div class="row">
+              <label for="rent" class="col-md-6 col-form-label"
+                >Monthly Rent(&#8377;)</label
+              >
+              <div class="col-md-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="rent"
+                  name="rent"
+                  ngModel
+                />
+              </div>
+            </div>
+            <div style="height: 3rem"></div>
+            <div class="row">
+              <label for="deposite" class="col-md-6 col-form-label"
+                >Deposite(refundable - &#8377;)</label
+              >
+              <div class="col-md-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="deposite"
+                  name="deposite"
+                  ngModel
+                />
+              </div>
+            </div>
+            <div style="height: 3rem"></div>
+            <div class="row">
+              <label for="othercharges" class="col-md-6 col-form-label"
+                >Other charges(Monthly - &#8377;)</label
+              >
+              <div class="col-md-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="othercharges"
+                  name="othercharges"
+                  ngModel
+                />
+              </div>
+            </div>
+            <div style="height: 3rem"></div>
+            <div class="row">
+              <label for="photoList" class="col-md-4 col-form-label"
+                >Photo's</label
+              >
+              <div class="col-md-8">
+                <input
+                  type="file"
+                  class="form-control"
+                  id="photoList"
+                  multiple
+                  accept="image/png, image/gif, image/jpeg"
+                  name="photoList"
+                  ngModel
+                />
+              </div>
+            </div>
+            <div style="height: 3rem"></div>
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-primary">
+                Add New Property
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>

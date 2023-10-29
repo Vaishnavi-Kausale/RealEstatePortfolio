@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-new-property',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class NewPropertyComponent {
 
+  add_new_property(form:NgForm)
+  {
+    console.log(form.value)
+  }
 }

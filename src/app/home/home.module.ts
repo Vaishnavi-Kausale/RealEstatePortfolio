@@ -22,6 +22,7 @@ import { NewPropertyComponent } from './new-property/new-property.component';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     HomeRoutingModule
   ],
   providers: [
