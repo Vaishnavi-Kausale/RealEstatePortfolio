@@ -17,6 +17,13 @@ export class PropertyListComponent {
   propertList: any
 
   ngOnInit(): void {
-    this.propertList = this.propertyservice.getall();
+    this.propertyservice.getall().subscribe(obj => {
+      this.propertList = obj;
+    })
+  }
+
+  changeSource(event:any)
+  {
+    event.target.src = "assets/realeaste-photo/default_property.png";
   }
 }

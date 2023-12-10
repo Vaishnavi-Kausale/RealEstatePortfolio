@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { filter } from 'rxjs';
+import { Observable, filter, map, mergeMap, of } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -72,15 +74,26 @@ export class PropertyService {
     }
   ]
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
-  getall()
+  getall():Observable<any>
   {
-    return this.propertList;
+    return this.http.get(environment.apiBaseUrl+'/property/getall').pipe(mergeMap(obj => {
+      return of(obj);
+    }))
   }
 
-  get(id:number)
+  get(id:number) : Observable<any>
   {
-    return this.propertList.filter(p => p.id==id)
+    return this.http.get(environment.apiBaseUrl+'/property/get/'+id).pipe(mergeMap(obj => {
+      return of(obj);
+    }))
+  }
+
+  createNewProperty(obj:any):Observable<any>
+  {
+    return this.http.post(environment.apiBaseUrl + '/property/create', obj).pipe(mergeMap(obj => {
+      return of(obj);
+    }));
   }
 }

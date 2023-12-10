@@ -15,6 +15,9 @@ export class PropertyDetailsComponent {
 }
 ngOnInit(): void {
   this.id = Number(this.act_route.snapshot.paramMap.get('id'))
-  this.propertyObj = this.propertyService.get(this.id)[0]
+  this.propertyService.get(this.id).subscribe(obj => {
+    console.log(obj);
+    this.propertyObj = obj;
+  });
 }
 }

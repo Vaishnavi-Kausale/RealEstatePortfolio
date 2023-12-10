@@ -48,7 +48,7 @@
                   type="text"
                   class="form-control"
                   id="propertydesc"
-                  name="propertydesc"
+                  name="description"
                   ngModel
                 >
                 </textarea>
@@ -110,13 +110,13 @@
                   type="text"
                   class="form-control"
                   id="othercharges"
-                  name="othercharges"
+                  name="additionalcharges"
                   ngModel
                 />
               </div>
             </div>
-            <div style="height: 3rem"></div>
-            <div class="row">
+            <!--<div style="height: 3rem"></div>
+             <div class="row">
               <label for="photoList" class="col-md-4 col-form-label"
                 >Photo's</label
               >
@@ -125,16 +125,16 @@
                   type="file"
                   class="form-control"
                   id="photoList"
-                  multiple
                   accept="image/png, image/gif, image/jpeg"
                   name="photoList"
-                  ngModel
+                  [(ngModel)]="fileselector"
+                  multiple="multiple"
                 />
               </div>
-            </div>
+            </div> -->
             <div style="height: 3rem"></div>
             <div class="d-grid gap-2">
-              <button type="submit" class="btn btn-primary">
+              <button type="submit" class="btn btn-danger">
                 Add New Property
               </button>
             </div>
