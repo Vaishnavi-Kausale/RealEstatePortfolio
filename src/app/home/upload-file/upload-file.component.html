@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <div>
+        <label class="image-upload-container btn btn-bwm">
+          <span>Select Image</span>
+          <input
+            [(ngModel)]="imageInputctrl"
+            #imageInput
+            type="file"
+            accept="image/*"
+            (change)="processFile(imageInput)"
+          />
+        </label>
+
+        <div *ngIf="selectedFile">
+          <img style="height: 10rem; width: 10rem" [src]="selectedFile?.src" />
+
+          <button
+            type="button"
+            class="btn btn-danger"
+            (click)="uploadSelectedPhoto()"
+          >
+            Upload Selected Photo
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p *ngIf="responsemsg.length > 0" class="text-success">{{ responsemsg }}</p>
+</div>

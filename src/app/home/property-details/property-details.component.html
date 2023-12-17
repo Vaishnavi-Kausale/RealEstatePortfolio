@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="propertyObj">
   <div class="row">
     <div class="col"></div>
     <div class="col">
@@ -7,23 +7,26 @@
         <div class="card" style="width: 30rem">
           <div id="carouselExample" class="carousel slide">
             <div class="carousel-inner">
-              <div class="carousel-item active">
+              <div class="carousel-item active" *ngIf="photoList.length == 0">
                 <img
-                  src="assets/realeaste-photo/1.jpeg"
+                  src="assets/realeaste-photo/default_property.png"
+                  style="width: 20rem; height: 30rem"
                   class="d-block w-100"
                   alt="..."
                 />
               </div>
-              <div class="carousel-item">
+              <div class="carousel-item active" *ngIf="photoList.length > 0">
                 <img
-                  src="assets/realeaste-photo/2.jpeg"
+                  [src]="photoList[0]"
+                  style="width: 20rem; height: 30rem"
                   class="d-block w-100"
                   alt="..."
                 />
               </div>
-              <div class="carousel-item">
+              <div class="carousel-item" *ngFor="let p of photoList">
                 <img
-                  src="assets/realeaste-photo/3.jpeg"
+                  [src]="p"
+                  style="width: 20rem; height: 30rem"
                   class="d-block w-100"
                   alt="..."
                 />
@@ -67,8 +70,25 @@
               <li class="list-group-item">
                 Additional charges: {{ propertyObj.additionalcharges }}/Month
               </li>
+              <li class="list-group-item">
+                <button class="btn btn-danger">Update status</button>
+              </li>
+              <li class="list-group-item">
+                <button
+                  type="button"
+                  *ngIf="!uploadPhoto"
+                  class="btn btn-danger"
+                  (click)="uploadPhoto = !uploadPhoto"
+                >
+                  Upload photo
+                </button>
+                <app-upload-file
+                  [propertyid]="propertyObj.id"
+                  (photoLoader)="getPhotoList()"
+                  *ngIf="uploadPhoto"
+                ></app-upload-file>
+              </li>
             </ul>
-            <a routerLink="#" class="btn btn-danger">Update status</a>
           </div>
         </div>
         <div style="height: 3rem"></div>

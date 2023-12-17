@@ -9,6 +9,7 @@ import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { CommonModule } from "@angular/common";
 import { NewPropertyComponent } from './new-property/new-property.component';
+import { UploadFileComponent } from './upload-file/upload-file.component';
 
 
 
@@ -18,12 +19,13 @@ import { NewPropertyComponent } from './new-property/new-property.component';
     HomeMenuComponent,
     PropertyDetailsComponent,
     PropertyListComponent,
-    NewPropertyComponent
+    NewPropertyComponent,
+    UploadFileComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
-    HomeRoutingModule
+    HomeRoutingModule,
   ],
   providers: [
   ],

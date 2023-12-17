@@ -31,17 +31,29 @@
       <nav aria-label="Page navigation example">
         <ul class="pagination">
           <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
+            <button
+              [disabled]="pagenumber < 1"
+              class="page-link"
+              href="#"
+              aria-label="Previous"
+              (click)="previousPage()"
+            >
               <span aria-hidden="true">&laquo;</span>
-            </a>
+            </button>
           </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
           <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
+            <a class="page-link">{{ pagenumber + 1 }}</a>
+          </li>
+          <li class="page-item">
+            <button
+              [disabled]="propertList.length < 20"
+              class="page-link"
+              href="#"
+              aria-label="Next"
+              (click)="nextPage()"
+            >
               <span aria-hidden="true">&raquo;</span>
-            </a>
+            </button>
           </li>
         </ul>
       </nav>
