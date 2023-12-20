@@ -10,6 +10,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { CommonModule } from "@angular/common";
 import { NewPropertyComponent } from './new-property/new-property.component';
 import { UploadFileComponent } from './upload-file/upload-file.component';
+import { UpdatePropertyComponent } from './property-details/update-property/update-property.component';
 
 
 
@@ -20,7 +21,8 @@ import { UploadFileComponent } from './upload-file/upload-file.component';
     PropertyDetailsComponent,
     PropertyListComponent,
     NewPropertyComponent,
-    UploadFileComponent
+    UploadFileComponent,
+    UpdatePropertyComponent
   ],
   imports: [
     CommonModule,

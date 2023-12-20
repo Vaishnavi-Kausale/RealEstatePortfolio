@@ -71,7 +71,11 @@
                 Additional charges: {{ propertyObj.additionalcharges }}/Month
               </li>
               <li class="list-group-item">
-                <button class="btn btn-danger">Update status</button>
+                <a
+                  routerLink="/home/updateproperty/{{ id }}"
+                  class="btn btn-danger"
+                  >Update status</a
+                >
               </li>
               <li class="list-group-item">
                 <button
